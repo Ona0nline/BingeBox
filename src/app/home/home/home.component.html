@@ -1,1 +1,27 @@
-<p>home works!</p>
+<!-- Temporary implementation for functionality, buttons will be coloured cards, angular material -->
+
+  
+
+<div class="container">
+    <h1>Welcome to binge-box</h1>
+    <h2>Select a mood to get suggestions on what to watch</h2>
+
+    <div class="moods">
+
+    
+        <button>Action</button>
+        <button>Comedy</button>
+        <button>Romance</button>
+        <button>Horror</button>
+        <button>Sci-Fi</button>
+
+    </div>
+
+    <div>
+        <button [routerLink]="['/watched']">Watched</button>
+        <button routerLink="['/towatch']">Already Watched</button>
+    </div>
+
+    
+</div>
+
