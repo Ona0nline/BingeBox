@@ -21,8 +21,14 @@ export class MovieService {
   constructor(private http: HttpClient) { }
 
   searchMovie(search: string) : Observable<JSON>{
-    console.log(this.http.get<JSON>(`${this.searchUrl}?query=${search}`))
-    return this.http.get<JSON>(`${this.searchUrl}?query=${search}`)
+    console.log(this.http.get<JSON>(`${this.searchUrl}?query=${search}`, this.httpOptions))
+    return this.http.get<JSON>(`${this.searchUrl}?query=${search}`, this.httpOptions)
+
+  }
+
+  dummyTest(search: string) : Observable<JSON>{
+    console.log(this.http.get<JSON>(`${this.searchUrl}?query=${search}`, this.httpOptions))
+    return this.http.get<JSON>(`${this.searchUrl}?query=${search}`, this.httpOptions)
 
   }
 }

@@ -46,4 +46,9 @@ export class ToWatchComponent implements OnInit {
     console.log("Selected: ", movie.title)
   }
 
+  dummyTest(){
+    this.movieService.dummyTest('now you see me')
+    console.log("Called.")
+  }
+
 }

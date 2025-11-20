@@ -8,6 +8,7 @@ import { WatchedComponent } from './watched/watched/watched.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { TowatchModule } from './towatch/towatch.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    TowatchModule
+    TowatchModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

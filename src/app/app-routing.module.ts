@@ -7,8 +7,8 @@ import { ToWatchComponent } from './towatch/to-watch/to-watch.component';
 const routes: Routes = [
 
   {path: '', component:HomeComponent},
-  {path:"watched", component:WatchedComponent},
-  {path:"towatch", component:ToWatchComponent}
+  {path:'watched', component:WatchedComponent},
+  {path:'towatch', component:ToWatchComponent}
 
 ];
 
