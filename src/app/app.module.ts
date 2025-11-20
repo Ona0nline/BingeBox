@@ -5,10 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home/home.component';
 import { WatchedComponent } from './watched/watched/watched.component';
-import { ToWatchComponent } from './towatch/to-watch/to-watch.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatButtonModule} from '@angular/material/button';
-
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { TowatchModule } from './towatch/towatch.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -16,14 +14,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     HomeComponent,
     WatchedComponent,
-    ToWatchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatToolbarModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatToolbarModule,
+    TowatchModule
   ],
   providers: [],
   bootstrap: [AppComponent]

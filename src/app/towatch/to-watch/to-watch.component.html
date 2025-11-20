@@ -1,1 +1,17 @@
-<p>to-watch works!</p>
+<h1>Search for movies/shows to watch</h1>
+
+<div>
+    <mat-form-field>
+
+        <mat-label>Search Movie</mat-label>
+
+        <input matInput [formControl]="searchControl" [matAutocomplete]="auto">
+
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let movie of movies" [value]="movie.title">
+              {{movie.title}}
+            </mat-option>
+        </mat-autocomplete>
+
+    </mat-form-field>
+</div>
