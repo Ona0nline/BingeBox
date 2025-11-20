@@ -10,7 +10,8 @@ import { query } from '@angular/animations';
 export class MovieService {
 
   private token = environment.tmdbToken
-  private searchUrl = "https://api.themoviedb.org/3/search/movie"
+  private searchManyUrl = "https://api.themoviedb.org/3/search/movie"
+  private searchOneUrl = "https://api.themoviedb.org/3/movie"
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -20,15 +21,21 @@ export class MovieService {
 
   constructor(private http: HttpClient) { }
 
-  searchMovie(search: string) : Observable<JSON>{
-    console.log(this.http.get<JSON>(`${this.searchUrl}?query=${search}`, this.httpOptions))
-    return this.http.get<JSON>(`${this.searchUrl}?query=${search}`, this.httpOptions)
+  searchMovies(search: string) : Observable<JSON>{
+    console.log(this.http.get<JSON>(`${this.searchManyUrl}?query=${search}`, this.httpOptions))
+    return this.http.get<JSON>(`${this.searchManyUrl}?query=${search}`, this.httpOptions)
 
   }
 
-  dummyTest(search: string) : Observable<JSON>{
-    console.log(this.http.get<JSON>(`${this.searchUrl}?query=${search}`, this.httpOptions))
-    return this.http.get<JSON>(`${this.searchUrl}?query=${search}`, this.httpOptions)
+  searchOneMovie(movieId: string): Observable<JSON>{
+    return this.http.get<JSON>(`${this.searchOneUrl}/${movieId}`, this.httpOptions)
 
   }
+
+  getMovieDetails(id: string) : Observable<any>{
+    return this.http.get<any>(`${this.searchOneUrl}/${id}`, this.httpOptions)
+
+  }
+
+
 }

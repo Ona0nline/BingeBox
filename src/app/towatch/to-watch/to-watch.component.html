@@ -7,16 +7,24 @@
 
         <input matInput [formControl]="searchControl" [matAutocomplete]="auto">
 
-        <mat-autocomplete #auto="matAutocomplete">
-            <mat-option *ngFor="let movie of movies" [value]="movie.title">
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selectMovie($event.option.value)">
+            <mat-option *ngFor="let movie of movies" [value]="movie.title" >
               {{movie.title}}
             </mat-option>
         </mat-autocomplete>
 
     </mat-form-field>
+
+    <div fxLayout="row-wrap" fxLayoutGap="50px grid" class="posters">
+        <div *ngFor="let movie of movies">
+            <mat-card class="poster-card">
+                <img src="" alt="">
+
+            </mat-card>
+
+        </div>
+
+    </div>
+
 </div>
 
-<div>
-    <h4>Testting</h4>
-    <button (click)="dummyTest()">Test</button>
-</div>

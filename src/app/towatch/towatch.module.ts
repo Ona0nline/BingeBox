@@ -8,19 +8,24 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ToWatchComponent } from './to-watch/to-watch.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatOptionModule, MatRippleModule } from '@angular/material/core';
+import { FlexModule } from "@angular/flex-layout";
+import {MatCardModule} from "@angular/material/card";
+
 
 
 @NgModule({
   declarations: [ToWatchComponent],
   imports: [
-    CommonModule, 
+    CommonModule,
     MatButtonModule,
     MatFormFieldModule,
     MatToolbarModule,
-    MatInputModule, 
+    MatInputModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
-    MatOptionModule, MatRippleModule
-  ]
+    MatOptionModule, MatRippleModule,
+    FlexModule,
+    MatCardModule
+]
 })
 export class TowatchModule { }

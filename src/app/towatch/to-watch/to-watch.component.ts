@@ -14,6 +14,9 @@ export class ToWatchComponent implements OnInit {
 
   searchControl = new FormControl();
   movies: Movie[] = []
+  selectedMovie!: Movie;
+  selectedMovieId: string =''
+  movieDetails: any;
   
   constructor(private movieService: MovieService){
 
@@ -26,13 +29,12 @@ export class ToWatchComponent implements OnInit {
       // Only process if the new value is different from the last one, ie no useless api call
       distinctUntilChanged(),
       // SwitchMap receives the value from valueChanges, cancels prev ongoing API request, starts a new observable (API Call)
-      switchMap(query => this.movieService.searchMovie(query))
+      switchMap(query => this.movieService.searchMovies(query))
     ).subscribe((results: any) => {
       this.movies = results.results
     })
   }
 
-  
 
   // accepts event from user searching/typing
   // Remember though, the users movie serach will be sent through to the tmdb api...
@@ -42,13 +44,32 @@ export class ToWatchComponent implements OnInit {
 
   }
 
-  selectMovie(movie: Movie){
-    console.log("Selected: ", movie.title)
+  selectMovie(movie: string){
+    this.movieService.searchMovies(movie).subscribe(data => {
+      this.movieDetails = data
+    }
+    )
+    
+    // this.getMovieId(movie)
+    this.console(this.movieService.searchMovies(movie).subscribe(data => {
+      this.movieDetails = data
+    }
+    ))
+    
+  //  return this.selectedMovie = movie;
+   
   }
 
-  dummyTest(){
-    this.movieService.dummyTest('now you see me')
-    console.log("Called.")
+  getMovieId(movieTitle: string){
+    return this.movieService.searchOneMovie(movieTitle).subscribe(data  => {
+      this.movieDetails = data;
+    })
   }
+
+  console(thing: any){
+    console.log(thing)
+  }
+
+  
 
 }
