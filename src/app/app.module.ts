@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home/home.component';
 import { WatchedComponent } from './watched/watched/watched.component';
 import { ToWatchComponent } from './towatch/to-watch/to-watch.component';
-// import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,8 @@ import { ToWatchComponent } from './towatch/to-watch/to-watch.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
