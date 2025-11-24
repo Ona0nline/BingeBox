@@ -28,7 +28,7 @@ export class ToWatchComponent implements OnInit {
   ngOnInit(): void {
     this.searchControl.valueChanges.pipe(
       // Only process when user pauses for this amount of time
-      debounceTime(200),
+      // debounceTime(200),
       // Only process if the new value is different from the last one, ie no useless api call
       distinctUntilChanged(),
       // SwitchMap receives the value from valueChanges, cancels prev ongoing API request, starts a new observable (API Call)

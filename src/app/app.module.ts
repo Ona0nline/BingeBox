@@ -11,6 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import {FlexModule} from "@angular/flex-layout";
 import {MatInputModule} from '@angular/material/input';
+import { ReviewsComponent } from './reviews/reviews/reviews.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -19,6 +21,7 @@ import {MatInputModule} from '@angular/material/input';
     AppComponent,
     HomeComponent,
     WatchedComponent,
+    ReviewsComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,8 @@ import {MatInputModule} from '@angular/material/input';
     TowatchModule,
     HttpClientModule,
     FlexModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

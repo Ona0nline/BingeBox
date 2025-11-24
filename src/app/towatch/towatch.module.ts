@@ -10,6 +10,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatOptionModule, MatRippleModule } from '@angular/material/core';
 import { FlexModule } from "@angular/flex-layout";
 import {MatCardModule} from "@angular/material/card";
+import { AppRoutingModule } from "src/app/app-routing.module";
 
 
 
@@ -25,7 +26,8 @@ import {MatCardModule} from "@angular/material/card";
     MatAutocompleteModule,
     MatOptionModule, MatRippleModule,
     FlexModule,
-    MatCardModule
+    MatCardModule,
+    AppRoutingModule
 ]
 })
 export class TowatchModule { }

@@ -1,22 +1,16 @@
-<!-- Temporary implementation for functionality, buttons will be coloured cards, angular material -->
-<!-- Nav bar I guess -->
-
-
-
 <div class="container-center">
-    <h1>Welcome to binge-box</h1>
-    <h2>Describe what mood you are in and let the app suggest movies for you</h2>
+  <h1>Welcome to Binge-Box</h1>
+  <h2>Describe what mood you are in and let the app suggest movies for you</h2>
 
-    <div class="moods">
+  <mat-form-field>
+    <input class="mood-search" matInput placeholder="Describe what mood you are in" [(ngModel)]="description">
+  </mat-form-field>
 
-    <mat-form-field>
-        <input class="mood-search" matInput placeholder="Describe what mood you are in">
-    </mat-form-field>
+  <button mat-raised-button color="primary" (click)="geminirecs()">Search</button>
 
-    </div>
-
-
-
-    
+  <div *ngIf="aiResponse" class="ai-results">
+    <h3>Recommended Movies:</h3>
+    <p>{{ aiResponse }}</p>
+    <mat-spinner></mat-spinner>
+  </div>
 </div>
-

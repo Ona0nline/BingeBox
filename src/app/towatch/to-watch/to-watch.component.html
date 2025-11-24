@@ -35,6 +35,7 @@ poster_path
                  <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" />
                  <h4>{{movie.overview}}</h4>
                  <h5>{{movie.release_date}}</h5>
+                 <button [routerLink]="['/review']" mat-button>Review</button>
 
             </mat-card>
 
