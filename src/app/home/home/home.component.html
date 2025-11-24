@@ -15,21 +15,20 @@
 </div>
 
 <!-- Show results once ready -->
-<div *ngIf="!loading && aiResponse" class="ai-results">
+<div *ngIf="!loading && aiResponse" class="ai-results" >
   <h3>Recommended Movies:</h3>
   <p>{{ aiResponse }}</p>
+
+<div *ngFor="let movie of finalMovies">
+  <mat-card class="poster-card">
+    <img width="300px" [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" />
+    <h4>{{ movie.overview }}</h4>
+    <h5>{{ movie.release_date }}</h5>
+  </mat-card>
 </div>
 
- <div *ngFor="let recommendation of recommendations">
-            <h1>{{recommendation}}</h1>
-            <mat-card class="poster-card">
-                 <!-- <img [src]="'https://image.tmdb.org/t/p/w500' + recommendation" /> -->
-                 <h4>{{recommendation}}</h4>
-                 <h5>{{recommendation}}</h5>
-                 <button mat-button>Review</button>
+</div>
 
-            </mat-card>
 
-        </div>
 
 </div>

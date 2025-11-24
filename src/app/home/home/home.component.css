@@ -11,3 +11,7 @@ button
 mat-form-field{
     width: 300px;
 }
+
+mat-card{
+    margin: 50px;
+}
