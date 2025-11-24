@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home/home.component';
 import { WatchedComponent } from './watched/watched/watched.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { TowatchModule } from './towatch/towatch.module';
@@ -13,13 +12,13 @@ import {FlexModule} from "@angular/flex-layout";
 import {MatInputModule} from '@angular/material/input';
 import { ReviewsComponent } from './reviews/reviews/reviews.component';
 import { FormsModule } from '@angular/forms';
+import { HomeModule } from './home/home/home.module';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     WatchedComponent,
     ReviewsComponent,
   ],
@@ -32,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FlexModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

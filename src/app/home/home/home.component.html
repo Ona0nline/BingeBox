@@ -8,9 +8,28 @@
 
   <button mat-raised-button color="primary" (click)="geminirecs()">Search</button>
 
-  <div *ngIf="aiResponse" class="ai-results">
-    <h3>Recommended Movies:</h3>
-    <p>{{ aiResponse }}</p>
-    <mat-spinner></mat-spinner>
-  </div>
+<!-- Spinner appears ONLY while loading -->
+<div *ngIf="loading" class="loading-box">
+  <mat-spinner></mat-spinner>
+  <p>Fetching recommendations…</p>
+</div>
+
+<!-- Show results once ready -->
+<div *ngIf="!loading && aiResponse" class="ai-results">
+  <h3>Recommended Movies:</h3>
+  <p>{{ aiResponse }}</p>
+</div>
+
+ <div *ngFor="let recommendation of recommendations">
+            <h1>{{recommendation}}</h1>
+            <mat-card class="poster-card">
+                 <!-- <img [src]="'https://image.tmdb.org/t/p/w500' + recommendation" /> -->
+                 <h4>{{recommendation}}</h4>
+                 <h5>{{recommendation}}</h5>
+                 <button mat-button>Review</button>
+
+            </mat-card>
+
+        </div>
+
 </div>
