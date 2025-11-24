@@ -1,24 +1,40 @@
 <h1>Search for movies/shows to watch</h1>
 
 <div>
+
+    <div class="container-center">
     <mat-form-field>
 
-        <mat-label>Search Movie</mat-label>
+            <mat-label>Search Movie</mat-label>
 
-        <input matInput [formControl]="searchControl" [matAutocomplete]="auto">
+            <input 
+            matInput
+            [formControl]="searchControl" 
+            [matAutocomplete]="auto"
+            (keyup.enter)="onEnter()">
 
-        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selectMovie($event.option.value)">
-            <mat-option *ngFor="let movie of movies" [value]="movie.title" >
-              {{movie.title}}
-            </mat-option>
-        </mat-autocomplete>
+            <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selectMovie($event.option.value)">
+                <mat-option *ngFor="let movie of movies" [value]="movie" >
+                {{movie.title}}
+                </mat-option>
+            </mat-autocomplete>
 
-    </mat-form-field>
+        </mat-form-field>
 
+    </div>
+    
+    <!-- For while still searching -->
     <div fxLayout="row-wrap" fxLayoutGap="50px grid" class="posters">
+        <!-- 
+poster_path
+: 
+"/oD3Eey4e4Z259XLm3eD3WGcoJAh.jpg" -->
         <div *ngFor="let movie of movies">
+            <h1>{{movie.title}}</h1>
             <mat-card class="poster-card">
-                <img src="" alt="">
+                 <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" />
+                 <h4>{{movie.overview}}</h4>
+                 <h5>{{movie.release_date}}</h5>
 
             </mat-card>
 

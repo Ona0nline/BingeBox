@@ -10,6 +10,8 @@ import { TowatchModule } from './towatch/towatch.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import {FlexModule} from "@angular/flex-layout";
+import {MatInputModule} from '@angular/material/input';
+
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import {FlexModule} from "@angular/flex-layout";
     MatToolbarModule,
     TowatchModule,
     HttpClientModule,
-    FlexModule
+    FlexModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

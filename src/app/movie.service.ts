@@ -27,7 +27,7 @@ export class MovieService {
 
   }
 
-  searchOneMovie(movieId: string): Observable<JSON>{
+  searchOneMovie(movieId: number): Observable<JSON>{
     return this.http.get<JSON>(`${this.searchOneUrl}/${movieId}`, this.httpOptions)
 
   }
